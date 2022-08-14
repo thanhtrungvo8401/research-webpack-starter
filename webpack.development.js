@@ -6,11 +6,11 @@ module.exports = {
     mode: "development",
     entry: {
         home: path.resolve(__dirname, 'src/index.js'),
-        home2: path.resolve(__dirname, 'src/index.js')
+        // home2: path.resolve(__dirname, 'src/index.js')
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: '[name].[contenthash].js'
     },
     module: {
         rules: [
@@ -22,8 +22,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Webpack HTML",
-            filename: "index.html"
+            filename: "index.html",
+            template: "public/index.html"
         })
     ]
 }
